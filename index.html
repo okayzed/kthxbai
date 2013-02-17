@@ -9,20 +9,39 @@
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-  <script src="bootstrap/js/bootstrap.min.js"></script>
   <script src="js/libs/jquery-1.9.1.js"></script>
+  <script src="bootstrap/js/bootstrap.min.js"></script>
   <script src="js/libs/handlebars-1.0.0-rc.3.js"></script>
   <script src="js/libs/ember-1.0.0-rc.1.js"></script>
   <script src="js/app.js"></script>
 
   <script type="text/x-handlebars">
-    <h1>k thx bai</h1>
+
     <div>
-      {{outlet}}
+      <div class="row">
+        <h1 class="logo pull-right">k thx bai</h1>
+      </div>
+
+      <div class="row">
+        {{outlet}}
+      </div>
+
     </div>
   </script>
 
   <script type="text/x-handlebars" data-template-name="index">
+    <h2 class="pull-right">behaviors for day to day use.</h2>
+  </script>
+
+  <script type="text/x-handlebars" data-template-name="behavior">
+    <h1>{{behaviorName}}</h1>
+
+    <h2>Etymology</h2>
+    <h2>Description</h2>
+    <h2>Examples</h2>
+    <h2>Appropriate Locations</h2>
+    <h2>See Also</h2>
+
   </script>
 </body>
 </html>
