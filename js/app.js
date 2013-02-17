@@ -2,12 +2,12 @@ App = Ember.Application.create({});
 
 App.IndexRoute = Ember.Route.extend({
   setupController: function(controller) {
-    controller.set('content', ['a', 'b', 'c']);
+    controller.set('behaviors', BEHAVIORS);
   }
 });
 
 App.Router.map(function() {
-  this.resource('behavior', { path: '/behaviors/:behavior_id' });
+  this.resource('behavior', { path: ':behavior_id' });
 });
 
 App.BehaviorRoute = Ember.Route.extend({
