@@ -10,6 +10,23 @@ body {
   max-width: 1280px;
 }
 
+a {
+  color: #000;
+  overflow: visible;
+  display: block;
+  word-break: none;
+}
+
+a:hover {
+  color: #ff43ca;
+  text-decoration: none;
+}
+
 .logo {
   font-size: 64px;
+}
+
+.clear {
+  clear: both;
+  display: block;
 }
