@@ -13,32 +13,48 @@ App.Router.map(function() {
 App.BehaviorRoute = Ember.Route.extend({
   model: function(params) {
     var behavior_name = (params.behavior_id || '').replace(/_/g, ' ');
-    var behavior = BEHAVIORS[behavior_name] || NO_BEHAVIOR;
-    behavior.behaviorName = behavior_name || "None";
+    var behavior = BEHAVIOR_MAP[behavior_name] || NO_BEHAVIOR;
     return behavior;
   }
 });
 
 // {{{ JS Data
-var NO_BEHAVIOR = { behaviorName: "None" };
-var BEHAVIORS = {
-  "the circle joker"           : {
+var NO_BEHAVIOR = { name: "None" };
+
+var BEHAVIORS = [
+  {
+    name: "the circle joker",
+    locations: "parties & workplace"
   },
-  "follow the leader"          : {
+  {
+    name: "follow the leader",
   },
-  "galileo's mutterance"       : {
+  {
+    name: "galileo's mutterance"
   },
-  "ignorant queries"           : {
+  {
+    name: "ignorant queries"
   },
-  "non-explicit non-listening" : {
+  {
+    name: "non-explicit non-listening"
   },
-  "success shakes"             : {
+  {
+    name: "success shakes"
   },
-  "the accelerated gait"       : {
+  {
+    name: "the accelerated gait"
   },
-  "the false dilemma"          : {
+  {
+    name: "the false dilemma"
   },
-  "time traveling"             : {
-  },
-};
+  {
+    name: "time traveling"
+  }
+];
+
+var BEHAVIOR_MAP = {};
+BEHAVIORS.forEach(function(b) {
+  b.id = b.name;
+  BEHAVIOR_MAP[b.name] = b;
+});
 // }}}

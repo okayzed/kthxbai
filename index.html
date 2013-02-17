@@ -32,18 +32,27 @@
 
   <script type="text/x-handlebars" data-template-name="index">
     <div>
+      {{#each b in behaviors}}
+        <h2>{{#linkTo behavior b}}{{b.name}}{{/linkTo}}</h2>
+
+      {{/each}}
     </div>
   </script>
 
   <script type="text/x-handlebars" data-template-name="behavior">
     <div class="">
-      <h1>{{behaviorName}}</h1>
+      <h1>{{name}}</h1>
 
-      <h2>Etymology</h2>
-      <h2>Description</h2>
-      <h2>Examples</h2>
-      <h2>Appropriate Locations</h2>
-      <h2>See Also</h2>
+      {{#if etymology }} <h2>Etymology:</h2> {{etymology}}
+      {{/if}}
+      {{#if description }} <h2>description:</h2> {{description}}
+      {{/if}}
+      {{#if examples }} <h2>examples:</h2> {{examples}}
+      {{/if}}
+      {{#if also}} <h2>see also:</h2> {{also}}
+      {{/if}}
+      {{#if locations}} <h2>appropriate locations:</h2> {{locations}}
+      {{/if}}
     </div>
 
   </script>
