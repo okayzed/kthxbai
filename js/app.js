@@ -117,4 +117,37 @@ BEHAVIORS.forEach(function(b) {
   BEHAVIOR_MAP[b.name] = b;
 });
 
+
+var debounce = function debounce(func, threshold, execAsap) {
+    var timeout;
+
+    return function debounced () {
+        var obj = this, args = arguments;
+        function delayed () {
+            if (!execAsap)
+                func.apply(obj, args);
+            timeout = null;
+        };
+
+        if (timeout)
+            clearTimeout(timeout);
+        else if (execAsap)
+            func.apply(obj, args);
+
+        timeout = setTimeout(delayed, threshold || 100);
+    };
+}
+
+var throttle = function throttle(fn, delay) {
+  var timer = null;
+  return function () {
+    var context = this, args = arguments;
+    clearTimeout(timer);
+    timer = setTimeout(function () {
+      fn.apply(context, args);
+    }, delay);
+  };
+}
+
+
 // }}}

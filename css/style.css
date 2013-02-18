@@ -41,18 +41,9 @@ a:hover {
   z-index: 1;
 }
 
-#bg-canvas {
-  z-index: 2;
-  position: fixed;
-  background: none;
-  pointer-events: none;
-  top: 0;
-  left: 0;
-}
-
 .header {
   position: fixed;
-  top: 0;
+  top: 20px;
   right: 20px;
 }
 
@@ -67,4 +58,3 @@ a:hover {
 ::-webkit-scrollbar-thumb {
   background: #ddd;
 }
-

@@ -8,7 +8,7 @@
   <!-- }}} -->
   <link rel="stylesheet" href="css/style.css">
 </head>
-<body>
+<body data-spy="scroll" data-target=".navbar">
   <script src="js/libs/jquery-1.9.1.js"></script>
   <script src="bootstrap/js/bootstrap.min.js"></script>
   <script src="js/libs/handlebars-1.0.0-rc.3.js"></script>
@@ -17,7 +17,7 @@
 
   <script type="text/x-handlebars">
 
-    <div>
+    <div class="container pull-left">
       <div class="header">
         <div class="row">
           <h1 class="logo pull-right">
@@ -26,8 +26,6 @@
         <h2 class="pull-right">anti-behaviors for daily use.</h2>
         <div class="clear" > </div>
       </div>
-
-
 
       <div>
         {{outlet}}
@@ -49,33 +47,44 @@
     <div class="">
       <h1>{{name}}</h1>
 
-      {{#if etymology }} <div class="line"><h2>Etymology:</h2> {{etymology}}</div>
+<!--       <div class="navbar"> -->
+<!--         <div class="navbar-inner"> -->
+<!--           <ul class="nav"> -->
+<!--             {{#if etymology }} <li><a href="#etymology">etymology</a></li> -->
+<!--             {{/if}} -->
+<!--             {{#if description }} <li><a href="#description">description</a></li> -->
+<!--             {{/if}} -->
+<!--             {{#if examples }} <li><a href="#examples">examples</a></li> -->
+<!--             {{/if}} -->
+<!--             {{#if also}} <li><a href="#also">see also</a></li> -->
+<!--             {{/if}} -->
+<!--             {{#if locations}} <li><a href="#locations">appropriate locations</a></li>  -->
+<!--             {{/if}} -->
+<!--             {{#if effects}} <li><a href="#effects">observed effects</a></li> -->
+<!--             {{/if}} -->
+<!--           </ul> -->
+<!--         </div> -->
+<!--  -->
+<!--  -->
+      </div>
+
+      {{#if etymology }} <div class="line"><h3 id="etymology">Etymology:</h3> {{etymology}}</div>
       {{/if}}
-      {{#if description }} <div class="line"><h2>description:</h2> {{description}}</div>
+      {{#if description }} <div class="line"><h3 id="description">description:</h3> {{description}}</div>
       {{/if}}
-      {{#if examples }} <div class="line"><h2>examples:</h2> {{examples}}</div>
+      {{#if examples }} <div class="line"><h3 id="examples">examples:</h3> {{examples}}</div>
       {{/if}}
-      {{#if also}} <div class="line"><h2>see also:</h2> {{also}}</div>
+      {{#if also}} <div class="line"><h3 id="also">see also:</h3> {{also}}</div>
       {{/if}}
-      {{#if locations}} <div class="line"><h2>appropriate locations:</h2> {{locations}}</div>
+      {{#if locations}} <div class="line"><h3 id="locations">appropriate locations:</h3> {{locations}}</div>
       {{/if}}
-      {{#if effects}} <div class="line"><h2>observed effects:</h2> {{effects}}</div>
+      {{#if effects}} <div class="line"><h3 id="effects">observed effects:</h3> {{effects}}</div>
       {{/if}}
     </div>
 
   </script>
 
-  <script src="js/raphael-min.js"></script>
-
   <div id="bg-canvas"> </div>
-  <script>
-    (function() {
-      var paper = Raphael("bg-canvas", "100%", "100%");
-      console.log($("bg-canvas"));
-
-      paper.circle(50, 40, 10);
-    })();
-  </script>
 </body>
 </html>
 
