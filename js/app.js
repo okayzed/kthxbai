@@ -24,31 +24,90 @@ var NO_BEHAVIOR = { name: "None" };
 var BEHAVIORS = [
   {
     name: "the circle joker",
-    locations: "parties & workplace"
+    description: "during joke escalation, repeat the previous joker's statement and laugh heartily.",
+    examples: "",
+    locations: "parties",
+    also: "",
   },
   {
     name: "follow the leader",
+    description: "during conversation, move from room to room and re-arrange " +
+      "small objects, forcing your partner to follow, unsure of what to do.",
+    examples: "",
+    locations: "parties & workplace",
+    also: "",
   },
   {
-    name: "galileo's mutterance"
+    name: "galileo's mutterance",
+    description: "during an argument, concede a point to the opponent. then " +
+      "mutter under the breath that your original point is still right.",
+    examples: "",
+    locations: "workplace",
+    also: "",
+    effects: "",
   },
   {
-    name: "ignorant queries"
+    name: "ignorant queries",
+    description: "",
+    examples: "",
+    locations: "parties & workplace",
+    also: "",
   },
   {
-    name: "non-explicit non-listening"
+    name: "non-explicit non-listening",
+    description: "",
+    examples: "",
+    locations: "parties & workplace",
+    also: "",
   },
   {
-    name: "success shakes"
+    name: "success shakes",
+    description: "",
+    examples: "",
+    locations: "parties & workplace",
+    also: "",
   },
   {
-    name: "the accelerated gait"
+    name: "the accelerated gait",
+    description: "",
+    examples: "",
+    locations: "parties & workplace",
+    also: "",
   },
   {
-    name: "the false dilemma"
+    name: "the false dilemma",
+    description: "",
+    examples: "",
+    locations: "parties & workplace",
+    also: "",
   },
   {
-    name: "time traveling"
+    name: "over-detailing",
+    description: "",
+    examples: "",
+    locations: "workplace & home",
+    also: "",
+  },
+  {
+    name: "blackholing",
+    description: "",
+    examples: "",
+    locations: "parties, workplace, home",
+    also: "",
+  },
+  {
+    name: "the intimate borrower",
+    description: "",
+    examples: "",
+    locations: "workplace",
+    also: "",
+  },
+  {
+    name: "time traveling",
+    description: "",
+    examples: "",
+    locations: "parties & workplace",
+    also: "",
   }
 ];
 
@@ -57,4 +116,5 @@ BEHAVIORS.forEach(function(b) {
   b.id = b.name;
   BEHAVIOR_MAP[b.name] = b;
 });
+
 // }}}

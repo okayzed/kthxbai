@@ -2,7 +2,7 @@
 <html>
 <head>
 <meta charset=utf-8 />
-<title>JS Bin</title>
+<title>kthxbai</title>
   <!-- {{{ Bootstrap -->
   <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">
   <!-- }}} -->
@@ -18,11 +18,16 @@
   <script type="text/x-handlebars">
 
     <div>
-      <div class="row">
-        <h1 class="logo pull-right">k thx bai</h1>
+      <div class="header">
+        <div class="row">
+          <h1 class="logo pull-right">
+          {{#linkTo index}}k thx bai{{/linkTo}}</h1>
+        </div>
+        <h2 class="pull-right">anti-behaviors for daily use.</h2>
+        <div class="clear" > </div>
       </div>
-      <h2 class="pull-right">behaviors for day to day use.</h2>
-      <div class="clear" />;
+
+
 
       <div>
         {{outlet}}
@@ -44,18 +49,32 @@
     <div class="">
       <h1>{{name}}</h1>
 
-      {{#if etymology }} <h2>Etymology:</h2> {{etymology}}
+      {{#if etymology }} <div class="line"><h2>Etymology:</h2> {{etymology}}</div>
       {{/if}}
-      {{#if description }} <h2>description:</h2> {{description}}
+      {{#if description }} <div class="line"><h2>description:</h2> {{description}}</div>
       {{/if}}
-      {{#if examples }} <h2>examples:</h2> {{examples}}
+      {{#if examples }} <div class="line"><h2>examples:</h2> {{examples}}</div>
       {{/if}}
-      {{#if also}} <h2>see also:</h2> {{also}}
+      {{#if also}} <div class="line"><h2>see also:</h2> {{also}}</div>
       {{/if}}
-      {{#if locations}} <h2>appropriate locations:</h2> {{locations}}
+      {{#if locations}} <div class="line"><h2>appropriate locations:</h2> {{locations}}</div>
+      {{/if}}
+      {{#if effects}} <div class="line"><h2>observed effects:</h2> {{effects}}</div>
       {{/if}}
     </div>
 
+  </script>
+
+  <script src="js/raphael-min.js"></script>
+
+  <div id="bg-canvas"> </div>
+  <script>
+    (function() {
+      var paper = Raphael("bg-canvas", "100%", "100%");
+      console.log($("bg-canvas"));
+
+      paper.circle(50, 40, 10);
+    })();
   </script>
 </body>
 </html>

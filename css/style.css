@@ -30,3 +30,41 @@ a:hover {
   clear: both;
   display: block;
 }
+
+.line {
+  float: left;
+  line-height: 0px;
+  clear: both;
+}
+
+.body {
+  z-index: 1;
+}
+
+#bg-canvas {
+  z-index: 2;
+  position: fixed;
+  background: none;
+  pointer-events: none;
+  top: 0;
+  left: 0;
+}
+
+.header {
+  position: fixed;
+  top: 0;
+  right: 20px;
+}
+
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background: none;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #ddd;
+}
+
