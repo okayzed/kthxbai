@@ -32,13 +32,27 @@ a:hover {
 }
 
 .line {
-  float: left;
   line-height: 0px;
   clear: both;
+  display: block;
 }
 
-.body {
+.line .details {
+  clear: both;
+  display: block;
+  margin-top: 20px;
+  margin-left: 10px;
+  line-height: 12px;
+  width: 500px;
+}
+
+.line h3 {
+  float: left;
+}
+
+body {
   z-index: 1;
+  overflow-x: always;
 }
 
 .header {

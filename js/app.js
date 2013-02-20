@@ -18,6 +18,40 @@ App.BehaviorRoute = Ember.Route.extend({
   }
 });
 
+
+// {{{ Helper functions
+var debounce = function debounce(func, threshold, execAsap) {
+    var timeout;
+
+    return function debounced () {
+        var obj = this, args = arguments;
+        function delayed () {
+            if (!execAsap)
+                func.apply(obj, args);
+            timeout = null;
+        };
+
+        if (timeout)
+            clearTimeout(timeout);
+        else if (execAsap)
+            func.apply(obj, args);
+
+        timeout = setTimeout(delayed, threshold || 100);
+    };
+}
+
+var throttle = function throttle(fn, delay) {
+  var timer = null;
+  return function () {
+    var context = this, args = arguments;
+    clearTimeout(timer);
+    timer = setTimeout(function () {
+      fn.apply(context, args);
+    }, delay);
+  };
+}
+// }}}
+
 // {{{ JS Data
 var NO_BEHAVIOR = { name: "None" };
 
@@ -48,14 +82,15 @@ var BEHAVIORS = [
   },
   {
     name: "ignorant queries",
-    description: "",
-    examples: "",
+    description: "purposefully maintain that a position that is known to be wrong is right.",
+    examples: "The sun *definitely* revolves around the moon.",
     locations: "parties & workplace",
     also: "",
   },
   {
     name: "non-explicit non-listening",
-    description: "",
+    description: "during a long narrative, purposefully place your responses in the wrong spots " +
+      "of the conversation.",
     examples: "",
     locations: "parties & workplace",
     also: "",
@@ -90,14 +125,17 @@ var BEHAVIORS = [
   },
   {
     name: "blackholing",
-    description: "",
+    description: "tell a story that sounds like it will lead somewhere interesting, but devote " +
+      "a large amount of time to the mundane details in the story. ",
     examples: "",
     locations: "parties, workplace, home",
     also: "",
   },
   {
     name: "the intimate borrower",
-    description: "",
+    description: "ask to borrow or share something that's more intimate than is " +
+      "appropriate for the relationship (e.g. toothbrush, chapstick, condoms, " +
+      "tampons)",
     examples: "",
     locations: "workplace",
     also: "",
@@ -108,7 +146,48 @@ var BEHAVIORS = [
     examples: "",
     locations: "parties & workplace",
     also: "",
+  },
+  {
+    name: "conversation sink",
+    description: "pick a particular topic of interest & return to it when any " +
+      "opportune moment arises.",
+    examples: "",
+    locations: "meals, workplace",
+    also: "",
+  },
+  {
+    name: "pricked interest",
+    description: "tell another person that you've been meaning to talk to them about something, " +
+      "but forget what it was other than really important.",
+    examples: "",
+    locations: "work & social",
+    also: "",
+  },
+  {
+    name: "sarcasm... what's that?",
+    description: "be a sarcastic dick much of the time, but pretend you don't know what sarcasm is.",
+    examples: "",
+    locations: "work",
+    also: "",
+  },
+  {
+    name: "tele-bait and switch",
+    description: "express interest and excited in a telemarketer's pitch. " +
+      "\"lose\" reception suddenly and listen (but don't respond!) to the " +
+      "marketer's reactions.",
+    examples: "",
+    locations: "work",
+    also: "",
+  },
+  {
+    name: "troll goading",
+    description: "as a way of pre-empting trolls, encourage and goad them into an argument. " +
+      "then lose interest. watch as the troll's reading of the situation flounders.",
+    examples: "",
+    locations: "work & social",
+    also: "",
   }
+
 ];
 
 var BEHAVIOR_MAP = {};
@@ -116,38 +195,4 @@ BEHAVIORS.forEach(function(b) {
   b.id = b.name;
   BEHAVIOR_MAP[b.name] = b;
 });
-
-
-var debounce = function debounce(func, threshold, execAsap) {
-    var timeout;
-
-    return function debounced () {
-        var obj = this, args = arguments;
-        function delayed () {
-            if (!execAsap)
-                func.apply(obj, args);
-            timeout = null;
-        };
-
-        if (timeout)
-            clearTimeout(timeout);
-        else if (execAsap)
-            func.apply(obj, args);
-
-        timeout = setTimeout(delayed, threshold || 100);
-    };
-}
-
-var throttle = function throttle(fn, delay) {
-  var timer = null;
-  return function () {
-    var context = this, args = arguments;
-    clearTimeout(timer);
-    timer = setTimeout(function () {
-      fn.apply(context, args);
-    }, delay);
-  };
-}
-
-
 // }}}

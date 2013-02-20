@@ -46,40 +46,26 @@
   <script type="text/x-handlebars" data-template-name="behavior">
     <div class="">
       <h1>{{name}}</h1>
+    </div>
 
-<!--       <div class="navbar"> -->
-<!--         <div class="navbar-inner"> -->
-<!--           <ul class="nav"> -->
-<!--             {{#if etymology }} <li><a href="#etymology">etymology</a></li> -->
-<!--             {{/if}} -->
-<!--             {{#if description }} <li><a href="#description">description</a></li> -->
-<!--             {{/if}} -->
-<!--             {{#if examples }} <li><a href="#examples">examples</a></li> -->
-<!--             {{/if}} -->
-<!--             {{#if also}} <li><a href="#also">see also</a></li> -->
-<!--             {{/if}} -->
-<!--             {{#if locations}} <li><a href="#locations">appropriate locations</a></li>  -->
-<!--             {{/if}} -->
-<!--             {{#if effects}} <li><a href="#effects">observed effects</a></li> -->
-<!--             {{/if}} -->
-<!--           </ul> -->
-<!--         </div> -->
-<!--  -->
-<!--  -->
-      </div>
-
-      {{#if etymology }} <div class="line"><h3 id="etymology">Etymology:</h3> {{etymology}}</div>
-      {{/if}}
-      {{#if description }} <div class="line"><h3 id="description">description:</h3> {{description}}</div>
-      {{/if}}
-      {{#if examples }} <div class="line"><h3 id="examples">examples:</h3> {{examples}}</div>
-      {{/if}}
-      {{#if also}} <div class="line"><h3 id="also">see also:</h3> {{also}}</div>
-      {{/if}}
-      {{#if locations}} <div class="line"><h3 id="locations">appropriate locations:</h3> {{locations}}</div>
-      {{/if}}
-      {{#if effects}} <div class="line"><h3 id="effects">observed effects:</h3> {{effects}}</div>
-      {{/if}}
+{{#if etymology }} <div class="line clearfix">
+  <h3 id="etymology">Etymology:</h3> <span class="details clearfix">{{etymology}}</span></div>
+{{/if}}
+{{#if description }} <div class="line clearfix">
+  <h3 id="description">description:</h3> <span class="details clearfix">{{description}}</span></div>
+{{/if}}
+{{#if examples }} <div class="line clearfix">
+  <h3 id="examples">examples:</h3> <span class="details clearfix">{{examples}}</span></div>
+{{/if}}
+{{#if also}} <div class="line clearfix">
+  <h3 id="also">see also:</h3> <span class="details clearfix">{{also}}</span></div>
+{{/if}}
+{{#if locations}} <div class="line clearfix">
+  <h3 id="locations">appropriate locations:</h3> <span class="details clearfix">{{locations}}</span></div>
+{{/if}}
+{{#if effects}} <div class="line clearfix">
+  <h3 id="effects">observed effects:</h3> <span class="details clearfix">{{effects}}</span></div>
+{{/if}}
     </div>
 
   </script>
