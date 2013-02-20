@@ -117,14 +117,14 @@ var BEHAVIORS = [
     also: "",
   },
   {
-    name: "over-detailing",
-    description: "",
+    name: "blackholing",
+    description: "when listening to a story, keep a blank face on and delay responses to queues by a few moments.",
     examples: "",
-    locations: "workplace & home",
+    locations: "workplace & parties",
     also: "",
   },
   {
-    name: "blackholing",
+    name: "over-detailing",
     description: "tell a story that sounds like it will lead somewhere interesting, but devote " +
       "a large amount of time to the mundane details in the story. ",
     examples: "",
@@ -142,7 +142,8 @@ var BEHAVIORS = [
   },
   {
     name: "time traveling",
-    description: "",
+    description: "stay a sentence or two behind your conversation partner " +
+      "and re-hash or repeat things they have said.",
     examples: "",
     locations: "parties & workplace",
     also: "",
