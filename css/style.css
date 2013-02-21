@@ -42,7 +42,7 @@ a:hover {
   display: block;
   margin-top: 20px;
   margin-left: 10px;
-  line-height: 12px;
+  line-height: 16px;
   width: 500px;
 }
 
@@ -52,14 +52,40 @@ a:hover {
 
 body {
   z-index: 1;
-  overflow-x: always;
+}
+
+html {
+  overflow-y: scroll;
 }
 
 .header {
+  padding: 20px;
   position: fixed;
-  top: 20px;
-  right: 20px;
+  top: 0px;
+  right: 0px;
+  height: 100%;
+  border-right: 50px solid #ff43ca;
+  color: #000;
 }
+
+.header .r {
+  color: #ffd642;
+}
+.header .g {
+  color: #42ff78;
+}
+.header .b {
+  color: #426bff;
+}
+
+.header a {
+  color: #fff;
+}
+
+.header a:hover {
+  color: #fff;
+}
+
 
 ::-webkit-scrollbar {
   width: 12px;
@@ -71,4 +97,12 @@ body {
 
 ::-webkit-scrollbar-thumb {
   background: #ddd;
+}
+
+.rfloat {
+  float: right;
+}
+
+.lfloat {
+  float: left;
 }

@@ -97,14 +97,15 @@ var BEHAVIORS = [
   },
   {
     name: "success shakes",
-    description: "",
+    description: "shake shake shake",
     examples: "",
     locations: "parties & workplace",
     also: "",
   },
   {
     name: "the accelerated gait",
-    description: "",
+    description: "whilst walking, accelerate / decelerate in an imperceptible manner. (imperceptible " +
+      " but for the annoyance factor)",
     examples: "",
     locations: "parties & workplace",
     also: "",
@@ -192,8 +193,16 @@ var BEHAVIORS = [
 ];
 
 var BEHAVIOR_MAP = {};
+var prev = null;
 BEHAVIORS.forEach(function(b) {
   b.id = b.name;
   BEHAVIOR_MAP[b.name] = b;
+
+  if (prev) {
+    prev.next = b;
+    b.prev = prev;
+  }
+
+  prev = b;
 });
 // }}}

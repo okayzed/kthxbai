@@ -21,7 +21,11 @@
       <div class="header">
         <div class="row">
           <h1 class="logo pull-right">
-          {{#linkTo index}}k thx bai{{/linkTo}}</h1>
+          {{#linkTo index}}
+          <span class="r">k</span>
+          <span class="g">thx</span>
+          <span class="b">bai</span>
+          {{/linkTo}}</h1>
         </div>
         <h2 class="pull-right">anti-behaviors for daily use.</h2>
         <div class="clear" > </div>
@@ -44,6 +48,16 @@
   </script>
 
   <script type="text/x-handlebars" data-template-name="behavior">
+    <div class="pagination clearfix">
+       {{#if prev}}
+         <div class="lfloat">{{#linkTo behavior prev}}previous{{/linkTo}}</div>
+       {{/if}}
+
+       {{#if next}}
+         <div class="lfloat" style="margin-left: 20px;">{{#linkTo behavior next}}next{{/linkTo}}</div>
+       {{/if}}
+
+    </div>
     <div class="">
       <h1>{{name}}</h1>
     </div>
