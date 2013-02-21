@@ -112,7 +112,8 @@ var BEHAVIORS = [
   },
   {
     name: "the false dilemma",
-    description: "",
+    description: "after someone finishes outlining a hard problem they solved, let them know that the " +
+      "real hard problem is something that they didn't address.",
     examples: "",
     locations: "parties & workplace",
     also: "",
