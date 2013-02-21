@@ -86,7 +86,6 @@ html {
   color: #fff;
 }
 
-
 ::-webkit-scrollbar {
   width: 12px;
 }
@@ -105,4 +104,20 @@ html {
 
 .lfloat {
   float: left;
+}
+
+.pagination {
+  font-size: 150%;
+}
+
+.pagination {
+  font-size: 150%;
+}
+
+.pagination {
+  font-size: 150%;
+}
+
+.pagination {
+  font-size: 150%;
 }
